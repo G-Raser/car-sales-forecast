@@ -14,6 +14,5 @@ def hello_world():
 
 if __name__ == '__main__':
     # 启动flask
-    app.run()
+    app.run(debug=True)
 
-app.run(debug=True)
