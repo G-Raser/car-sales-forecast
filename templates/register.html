@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>汽车销量注册页面</title>
+
+    <meta name="keywords" content="登录界面设计"/>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<h1>Carsales Regist Form</h1>
+<div class="login-form">
+    <h2>User Regist</h2>
+    <div class="form-info">
+        <form method="POST">
+            <input type="text" class="email" name="email" placeholder="Email Address" required=""/>
+            <input type="text" class="email" name="username" placeholder="Username" required=""/>
+            <input type="password" class="password" name="password" placeholder="Password" required=""/>
+            <ul class="login-buttons">
+                <li><a href="{{ url_for('user.login') }}" class="hvr-sweep-to-left">LOGIN</a></li>
+                <li><input type="submit" value="REGISTER"/></li>
+                <div class="clear"></div>
+            </ul>
+        </form>
+    </div>
+</div>
+</body>
+</html>
