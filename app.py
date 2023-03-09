@@ -39,7 +39,4 @@ def hello_world():
 #         rs = conn.execute(db.text("select 1"))
 #         print(rs.fetchone())  # (1,)
 
-if __name__ == '__main__':
-    app.run(debug=True)  # debug=True发生错误时会返回发生错误的地方
-
 
