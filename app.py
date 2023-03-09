@@ -1,5 +1,7 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask import render_template
+
+import data_car
 
 # 创建flask的应用对象
 # __name__表示当前的模块名称
@@ -9,10 +11,14 @@ app = Flask(__name__)
 # 定义url请求路径
 @app.route('/')
 def hello_world():
-    """定义视图函数"""
     return render_template('index.html')
+# 左上角公司通知
+@app.route("/viewdata") 
+def viewdata():
+    alldata = data_car.data_echarts()
+    return jsonify(data = alldata)
+
 
 if __name__ == '__main__':
     # 启动flask
     app.run(debug=True)
-

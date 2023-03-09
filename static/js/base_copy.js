@@ -10,7 +10,6 @@ function fnW(str) {
 var china_map =echarts.init(document.getElementById("china_map"),'infographic'); 
 //var china_map =echarts.init(document.getElementById("china_map"),'shine');
 
-
 option = {
   title: {
     text: ' '
@@ -25,11 +24,6 @@ option = {
     }
   },
   legend: {
-    textStyle: {
-        fontSize:  14,
-        color:  '#fff',
-        padding: [0,0,0,8]
-    },
     data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
   },
   toolbox: {
@@ -54,7 +48,7 @@ option = {
                   fontSize:'16'    // x轴字体大小
                   }
       },
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      data: ['Mon','Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     }
   ],
   yAxis: [
@@ -69,17 +63,69 @@ option = {
       },
     }
   ],
+    visualMap: {
+        type: 'piecewise',
+        show: true,
+        dimension: 0,
+        seriesIndex: 0,
+        pieces: [
+            {
+                gt: 0,
+                lt: 3,
+                color: 'rgb(213,102,102)'
+            },
+            {
+                gt: 3,
+                lt: 5,
+                color: 'rgba(0, 0, 180, 1)'
+            },
+            {
+                gt: 5,
+                lt: 6,
+                color: 'rgb(213,102,102)'
+            }
+        ]
+    },
   series: [
     {
       name: 'Email',
       type: 'line',
       stack: 'Total',
       areaStyle: {
+          color: '#b97b7b'
       },
       emphasis: {
         focus: 'series'
       },
-        data:  [120, 132, 101, 134, 90, 230, 210],
+        data: [120, 132, 101, 134, 90, 230, 210],
+        // markArea: {//设置具体区域的背景颜色，选择不同区间 设置图表对应的背景颜色
+        //     silent: true,
+        //     data: [
+        //         [{
+        //             xAxis: 'Fri',
+        //             itemStyle: {
+        //                 color: '#2b3d4f'
+        //             }
+        //         }, {
+        //             xAxis: 'Sun'
+        //         }]
+        //     ]
+        // }
+        markLine: {
+        symbol: ['none', 'none'],
+        label: { show: false },
+        data: [{ xAxis: 1 }, { xAxis: 2 }]
+      },
+      areaStyle: {},
+      data: [
+        ['Mon', 200],
+        ['Tue', 560],
+        ['Wed', 750],
+        ['Thu', 580],
+        ['Fri', 250],
+        ['Sat', 300],
+        ['Sun', 450],
+      ]
     },
     {
       name: 'Union Ads',
@@ -89,7 +135,7 @@ option = {
       emphasis: {
         focus: 'series'
       },
-      data:  [220, 182, 191, 234, 290, 330, 310]
+      data: [220, 182, 191, 234, 290, 330, 310]
     },
     {
       name: 'Video Ads',
@@ -99,7 +145,7 @@ option = {
       emphasis: {
         focus: 'series'
       },
-      data:[150, 232, 201, 154, 190, 330, 410]
+      data: [150, 232, 201, 154, 190, 330, 410]
     },
     {
       name: 'Direct',
@@ -116,7 +162,7 @@ option = {
       type: 'line',
       stack: 'Total',
       label: {
-        show: false,
+        show: true,
         position: 'top'
       },
       areaStyle: {},
@@ -155,63 +201,62 @@ var timer = setInterval(function () {
 
 //充电桩地区分布图地图
 var pie_fanzui =echarts.init(document.getElementById("pie_fanzui"),'infographic');
+// option = {
+//     title : {
+//         x:'center'
+//     },
+//     tooltip : {
+//         trigger: 'item',
+//         formatter: "{a} <br/>{b} : {c} ({d}%)"
+//     },
+//     legend: {
+//         orient: 'vertical',
+//         left: 'left',
+//         data: ['比亚迪','理想','特斯拉','蔚来','小鹏'],
+//         textStyle: {color: '#fff'}
+//     },
+//
+// 	label: {
+// 	     normal: {
+// 	          textStyle: {
+// 	                color: 'red'  // 改变标示文字的颜色
+// 	          }
+// 	     }
+// 	},
+//     series : [
+//         {
+//             name: '新能源汽车类型分析',
+//             type: 'pie',
+//             radius : '55%',
+//             center: ['50%', '60%'],
+//             data:[
+//                 {value:335, name:'比亚迪'},
+//                 {value:310, name:'理想'},
+//                 {value:234, name:'特斯拉'},
+//                 {value:135, name:'蔚来'},
+//                 {value:1548, name:'小鹏'}
+//             ],
+//
+//             itemStyle: {
+//                 emphasis: {
+//                     shadowBlur: 10,
+//                     shadowOffsetX: 0,
+//
+//                     shadowColor: 'rgba(0, 0, 0, 0.5)'
+//                 }
+//             }
+//
+//         }
+//     ]
+// };
 var data = [
     {
-        name: '北京',
-        value: ['116.489356', '39.94083',100],
+        name: '充电桩地区分布图',
+        value: ['116.489356', '39.94083'],
         date: '2022-10-01',
         city: '北京市',
     },
 ];
-var convertData = function (data) {
-  var res = [];
-  for (var i = 0; i < data.length; i++) {
-      var geoCoord = geoCoordMap[data[i].name];
-      if (geoCoord) {
-      res.push({
-          name: data[i].name,
-          value: geoCoord.concat(data[i].value),
-      });
-      }
-  }
-  return res;
-};
-var geoCoordMap = {
-  '北京':[116.405285,39.904989],
-  '山东':[117.000923, 36.675807],
-  '河北':[115.48333,38.03333],
-  '吉林':[125.35000,43.88333],
-  '黑龙江':[127.63333,47.75000],
-  '辽宁':[123.38333,41.80000],
-  '内蒙古':[111.670801, 41.818311],
-  '新疆':[87.68333,43.76667],
-  '甘肃':[103.73333,36.03333],
-  '宁夏':[106.26667,37.46667],
-  '山西':[112.53333,37.86667],
-  '陕西':[108.95000,34.26667],
-  '河南':[113.65000,34.76667],
-  '安徽':[117.283042, 31.86119],
-  '江苏':[119.78333,32.05000],
-  '浙江':[120.20000,30.26667],
-  '福建':[118.30000,26.08333],
-  '广东':[113.23333,23.16667],
-  '江西':[115.90000,28.68333],
-  '海南':[110.35000,20.01667],
-  '广西':[108.320004, 22.82402],
-  '贵州':[106.71667,26.56667],
-  '湖南':[113.00000,28.21667],
-  '湖北':[114.298572, 30.584355],
-  '四川':[104.06667,30.66667],
-  '云南':[102.73333,25.05000],
-  '西藏':[91.00000,30.60000],
-  '青海':[96.75000,36.56667],
-  '天津':[117.20000,39.13333],
-  '上海':[121.55333,31.20000],
-  '重庆':[106.45000, 29.56667],
-  '台湾': [121.30, 25.03],
-  '香港': [114.10000,22.20000],
-  '澳门': [113.50000,22.20000],
-};
 var data2 = [
     { name: '北京', value: 177 },
     { name: '天津', value: 42 },
@@ -250,17 +295,33 @@ option = {
     backgroundColor: '#033652',
     tooltip: {
         show: true,
-        formatter: function(params) {
-            console.log(params)
-            too_data =  params.data.name  
-                         + "<br />充电桩数量： " + params.data.value[2]
-             return too_data;
-     }
+        trigger: 'item',
+        triggerOn: 'click',
+        padding: 0,
+        enterable: true,
+        transitionDuration: 1,
+        textStyle: {
+            color: '#000',
+            decoration: 'none',
+        },
+        formatter: function (params) {
+            console.log(params);
+            const { data } = params;
+            const type = data.type;
+            let typeName = '数据中心';
+            const tipHtml = ` <div style="width: 280px; background: rgba(22, 80, 158, 0.8); border: 1px solid rgba(7, 166, 255, 0.7);">
+                                <div style="color: #fff; padding: 10px; font-size: 16px; border-bottom: 2px solid #0c8bdd;">${data.name}</div>
+                                <p style="color: #fff;padding: 5px 10px;font-size: 14px;">建设位置：${data.city}</p>
+                                <p style="color: #fff;padding: 5px 10px;font-size: 14px;">建设时间：${data.date}</p>
+                                <p style="color: #fff;padding: 5px 10px;font-size: 14px;">设施类型：${typeName}</p>
+                              </div>`;
+            return tipHtml;
+        },
     },
     visualMap: {
         show: true,
         min: 0,
-        max: 25000,
+        max: 200,
         left: 'left',
         top: 'bottom',
         text: ['高', '低'], // 文本，默认为数值文本
@@ -344,13 +405,6 @@ option = {
                 },
             },
             roam: 'scale',
-            tooltip:{
-              show: true,
-              formatter: function(params) {
-                  too_data =  params.data.name  
-                               + "<br />充电桩数量： " + params.data.value
-                   return too_data;
-           }},
             itemStyle: {
                 normal: {
                     areaColor: '#031525',
@@ -365,6 +419,28 @@ option = {
         },
     ],
 };
+// echarts.on('click', (params) => {
+//     if (params.componentType === 'series' && params.componentSubType === 'scatter') {
+//         const index = params.dataIndex;
+//         // 取消所有散点高亮
+//         echarts.dispatchAction({
+//             type: 'downplay',
+//             seriesIndex: 0, //第几条series
+//         });
+//         // 显示指定data 的tooltip
+//         // myChart.dispatchAction({
+//         //     type: 'showTip',
+//         //     seriesIndex: 0, //第几条series
+//         //     dataIndex: index, //第几个tooltip
+//         // });
+//         // 高亮指定的散点
+//         echarts.dispatchAction({
+//             type: 'highlight',
+//             seriesIndex: 0, //第几条series
+//             dataIndex: index, //第几个tooltip
+//         });
+//     }
+// });
 pie_fanzui.setOption(option);
 
 
@@ -473,11 +549,85 @@ option = {
         ],
 };
 
+      // myChart.clear();
+      // 设置实例参数
+      // myChart.setOption(option);
+
+      // let index = 0; //默认选中第二个
+      // echarts.dispatchAction({
+      //   type: "highlight",
+      //   seriesIndex: 0,
+      //   dataIndex: index, //默认选中第二个
+      // });
+      // echarts.on("mouseover", function (e) {
+      //   if (e.dataIndex != index) {
+      //     echarts.dispatchAction({
+      //       type: "downplay",
+      //       seriesIndex: 0,
+      //       dataIndex: index,
+      //     });
+      //   }
+      // });
+      // echarts.on("mouseout", function (e) {
+      //   index = e.dataIndex;
+      //   echarts.dispatchAction({
+      //     type: "highlight",
+      //     seriesIndex: 0,
+      //     dataIndex: e.dataIndex,
+      //   });
+      // });
 pie_bingtu.setOption(option);
 
 //条形图
 //var pie_age =echarts.init(document.getElementById("pie_age"),'macarons'); 
 var pie_age =echarts.init(document.getElementById("pie_age"),'infographic'); 
+//var pie_age =echarts.init(document.getElementById("pie_age"),'shine'); 
+// option = {
+//     tooltip: {
+//         trigger: 'item',
+//         formatter: "{a} <br/>{b}: {c} ({d}%)"
+//     },
+//     legend: {
+//         orient: 'vertical',
+//         x: 'left',
+//         data:['18-30','31-40','41-50','51-60','65岁以上','未标明'],
+//         textStyle: {color: '#fff'}
+//     },
+//     series: [
+//         {
+//             name:'汽车购买人年龄分布',
+//             type:'pie',
+//             radius: ['30%', '55%'],
+//             avoidLabelOverlap: false,
+//             label: {
+//                 normal: {
+//                     show: false,
+//                     position: 'center'
+//                 },
+//                 emphasis: {
+//                     show: true,
+//                     textStyle: {
+//                         fontSize: '20',
+//                         fontWeight: 'bold'
+//                     }
+//                 }
+//             },
+//             labelLine: {
+//                 normal: {
+//                     show: false
+//                 }
+//             },
+//             data:[
+//                 {value:335, name:'18-30'},
+//                 {value:310, name:'31-40'},
+//                 {value:234, name:'41-50'},
+//                 {value:135, name:'51-60'},
+//                 {value:135, name:'65岁以上'},
+//                 {value:1548, name:'未标明'}
+//             ]
+//         }
+//     ]
+// };
 option = {
    backgroundColor: 'rgba(2,34,49,0.9)',
     tooltip: {},
@@ -490,7 +640,7 @@ option = {
     },
     xAxis: {
         type: 'value',
-        // max:500,
+        max:500,
         show: true,
         // 不显示轴线
          axisLine :{
@@ -503,13 +653,9 @@ option = {
         splitLine:{// 网格线为虚线
           show:false,
         },
-        splitNumber: 4 ,
-        axisLabel:{
-          textStyle: {
-          color: '#fff',   //x轴上的字体颜色
-          fontSize:'14'    // x轴字体大小
-          }
-        }
+        // axisLabel:{
+        //     formatter:'{value}%'
+        // }
     },
     yAxis: {
         type: 'category',
@@ -528,39 +674,39 @@ option = {
             color:'rgba(255, 255, 255, 1)',
             fontSize: 14
         },
-        data: ['比亚迪', '特斯拉', '小鹏', '蔚来', '理想'],
+        data: ['大米', '花生', '草莓', '玉米', '杭白'],
     },
     series: [
         {
-            name: '2021',
+            name: '系列一',
             type: 'bar',
             barWidth: 12,
             stack: 'stack',
             data: [160, 103, 155, 100, 50],
-            // markPoint: {
-            //     symbol: 'rect',
-            //     symbolSize: [3, 12],
-            //     itemStyle: {
-            //         color: '#ffffff'
-            //     },
-            //     data: [
-            //         { coord: [280, 0]},
-            //         { coord: [170, 1]},
-            //         { coord: [450, 2]},
-            //         { coord: [300, 3]},
-            //         { coord: [150, 4]},
-            //     ]
-            // }
+            markPoint: {
+                symbol: 'rect',
+                symbolSize: [3, 12],
+                itemStyle: {
+                    color: '#ffffff'
+                },
+                data: [
+                    { coord: [280, 0]},
+                    { coord: [170, 1]},
+                    { coord: [450, 2]},
+                    { coord: [300, 3]},
+                    { coord: [150, 4]},
+                ]
+            }
         },
         {
-            name: '2022',
+            name: '系列二',
             type: 'bar',
             barWidth: 12,
             stack: 'stack',
             data: [160, 103, 155, 100, 50],
         },
         {
-            name: '2023',
+            name: '系列三',
             type: 'bar',
             barWidth: 12,
             stack: 'stack',
@@ -570,94 +716,6 @@ option = {
 };
 pie_age.setOption(option);
 
-
-function ccc () {
-  $.get('/viewdata').done(function(mydata) {
-    alldata = mydata.data
-  china_map.setOption({
-            legend: {
-              data: ['比亚迪','理想','特斯拉','蔚来','小鹏']
-            },
-            xAxis: [
-              {
-                data: alldata.line_data.line_name
-              }
-            ],
-            series: [
-              {
-                name: '比亚迪',
-                  data:  alldata.line_data.line_data1,
-              },
-              {
-                name: '理想',
-                data:  alldata.line_data.line_data2
-              },
-              {
-                name: '特斯拉',
-                data:alldata.line_data.line_data3
-              },
-              {
-                name: '蔚来',
-                data: alldata.line_data.line_data4
-              },
-              {
-                name: '小鹏',
-                data: alldata.line_data.line_data5
-              }
-            ]
-          }); 
-    pie_fanzui.setOption({
-      series: [
-          {
-              data: convertData(alldata.map_data1),
-          },
-          {
-              data: alldata.map_data1,
-          },
-      ],
-  });
-    pie_bingtu.setOption({
-      legend: {
-        formatter: function (name) {
-          let data = alldata.pie_data1;
-          // console.log(data, 'data')
-          let total = 0;
-          let tarValue;
-          for (let i = 0; i < data.length; i++) {
-            total += data[i].value;
-            if (data[i].name == name) {
-              tarValue = data[i].value;
-            }
-          }
-          let v = tarValue;
-          //计算出百分比
-          return `${name}  ${v} `;
-          //name是名称，v是数值
-        },
-      },
-      series: [
-        {
-          data: alldata.pie_data1
-        },
-      ],
-}); 
-    pie_age.setOption({
-       series: [
-           {
-               data: alldata.bar_data.bar_data1
-           },
-           {
-               data: alldata.bar_data.bar_data2
-           },
-           {
-               data: alldata.bar_data.bar_data3
-           }
-       ]
-   });
-  
-})
-}
-setInterval(ccc(), 1000*5);
 
 //时间选择器
 var startV = '';
