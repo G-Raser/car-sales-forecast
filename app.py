@@ -1,5 +1,11 @@
 from flask import Flask, jsonify
 from flask import render_template
+# from myDatabase import Database
+from exts import db
+import config
+from flask_migrate import Migrate
+from models import BrandModel
+from blueprints.user import bp
 
 import data_car
 
@@ -8,15 +14,29 @@ import data_car
 # 模块名: flask以这个模块所在的目录为根目录，默认这个目录中的static为静态目录，templates为模板目录
 app = Flask(__name__)
 
+# 绑定配置文件
+app.config.from_object(config)
+
+db.init_app(app)
+
+# flask迁移数据库
+migrate = Migrate(app, db)
+
+# blueprint代码模块化
+app.register_blueprint(bp)
+
+
 # 定义url请求路径
 @app.route('/')
 def hello_world():
     return render_template('index.html')
+
+
 # 左上角公司通知
-@app.route("/viewdata") 
+@app.route("/viewdata")
 def viewdata():
     alldata = data_car.data_echarts()
-    return jsonify(data = alldata)
+    return jsonify(data=alldata)
 
 
 if __name__ == '__main__':
