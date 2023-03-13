@@ -7,9 +7,10 @@
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 
+    <script type="text/javascript" src="../static/js/base.js"></script>
     <script type="text/javascript" src="../static/js/rem.js"></script>
     <link rel="stylesheet" href="../static/css/style.css">
-    <title>天津市博安信通智慧社区内网数据比对信息系统</title>
+    <title>Drive to Future——驰向未来</title>
 </head>
 
 <body style="visibility: hidden;">
@@ -17,71 +18,36 @@
         <div class="box-left">
             <div class="left-top">
                 <div class="current-num">
-                    <div>当前比对数据</div>
-                    <p>3,456,789</p>
+                    <div>本平台目前在线人数</div>
+                    <p>1234 人</p>
                 </div>
             </div>
             <div class="left-center">
                 <div class="title-box">
-                    <h6>违法犯罪人员分析</h6>
+                    <h6>新能源汽车充电站分布</h6>
                 </div>
-                <div class="chart-box pie-chart" style="">
-                    <div id="pie_fanzui" style="width:100%;"></div>
-                    
+                <div class="chart-box pie-chart" >
+                    <div id="pie_fanzui" style="width:100%;height:90%">
+
+                    </div>
                 </div>
             </div>
-            <div class="left-bottom" class="select">
+            <div class="left-bottom">
                 <div class="title-box">
-                    <h6>人口出入记录</h6>
+                    <h6>各品牌销售量最新占比</h6>
                     
                 </div>
-                <div class="chart-box">
-                    <table class="table3">
-                    <thead>
-                        <tr>
-                            <th>姓名</th>
-                            <th>角色</th>
-                            <th>开门方式</th>
-                            <th>时间</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tList">
-<!--<tr><td colspan="4"><p style="width:9.6rem;">暂无数据</p></td></tr>-->
-                 
-                   <tr>
-                       <td>张梦</td>
-                       <td>访客</td>
-                       <td>人脸</td>
-                       <td>2018-11-01 13:51:23</td>
-                   </tr>
-                   <tr>
-                       <td>李阳荣</td>
-                       <td>业主</td>
-                       <td>APP</td>
-                       <td>2018-11-01 13:51:23</td>
-                   </tr>
-                   <tr>
-                        <td>张无双</td>
-                       <td>访客</td>
-                       <td>人脸</td>
-                       <td>2018-11-01 13:51:23</td>
-                   </tr>
-                   <tr>
-                       <td>李阳</td>
-                       <td>业主</td>
-                       <td>APP</td>
-                       <td>2018-11-01 13:51:23</td>
-                   </tr>
-                  
-                    </tbody>
-                </table>
-                
+                <div class="chart-box pie_chart" >
+                    <div id="pie_bingtu" style="width:101%;height:90%">
+
+                    </div>
+
                 </div>
             </div>
         </div>
         <div class="box-center">
             <div class="center-top">
-                <h1><img src="../static/images/jinghui.png" style="width:55px;margin-right:20px;"/>智慧社区内网比对平台</h1>
+                <h1><img src="../static/images/tubiao.png" style="width:55px;margin-right:20px;"/>驰向未来：车辆销售预测</h1>
             </div>
             <div class="center-center">
                 <div class="weather-box">
@@ -94,7 +60,7 @@
                         <div id="weather">
                             <p class="active">多云</p>
                             <p>16-22℃</p>
-                            <p>天津市和平区</p>
+                            <p>武汉市江夏区</p>
                         </div>
                     </div>
                 </div>
@@ -102,10 +68,10 @@
                 <div class="select-box" style="height: 0.3rem;">
                     
                     <div data-type="2">
-                        <div class="select" tabindex="0" hidefocus="true" >
-                           <p style="color:#FFFF00;font-weight:bold;">NO.1北京：2543289人</p>
-                           <p style="color:#7FFF00;font-weight:bold;">NO.1天津： 5690人</p>
-                           <p style="color:#7FFFD4;font-weight:bold;">NO.1河北： 456人</p>
+                        <div class="select" tabindex="0" hidefocus="true" style="margin-top: -30px;">
+{#                           <p style="color:#FFFF00;font-weight:bold;height: 40px;">NO.1北京：2543289人</p>#}
+{#                           <p style="color:#7FFF00;font-weight:bold;height: 40px;">NO.2天津： 5690人</p>#}
+{#                           <p style="color:#7FFFD4;font-weight:bold;height: 40px;">NO.3河北： 456人</p>#}
                         </div>
                         
                     </div>
@@ -113,7 +79,7 @@
             </div>
             <div class="center-bottom">
                 <div class="chart-box">
-                    <div id="china_map" style="width:100%;height:95%;"></div>
+                    <div id="china_map" style="width:105%;height:90%;"></div>
                 </div>
                 
             </div>
@@ -122,36 +88,67 @@
         <div class="box-right">
             <div class="right-top">
                 <div class="title-box">
-                    <h6 id="barTitle">违法犯罪人员年龄分布</h6>
+                    <h6 id="barTitle">各品牌年销量总计</h6>
                     
                 </div>
-                <p class="unit">单位：岁</p>
+<!--                <p class="unit">单位：岁</p>-->
                 <div class="chart-box">
-                    <div id="pie_age" style="width:100%;height:100%;"></div>
+                    <div id="pie_age" style="width:103%;height:80%;"></div>
                 </div>
                 
             </div>
             <div class="right-center">
             	
                 <div class="title-box">
-                    <h6>违法犯罪人员地区分布</h6>
+                    <h6>新能源汽车近期热点</h6>
                 </div>
-                <div class="chart-box pie-chart">
-                    
-                    <div id="qufenbu_data"style="width:90%;height:120px;margin-left:10px;"></div>
-                    
+                <div class="chart-box">
+                    <table class="table3" style="width:103%;height:50%;">
+                    <tbody id="tList">
+<!--<tr><td colspan="4"><p style="width:9.6rem;">暂无数据</p></td></tr>-->
+
+                   <tr>
+                       <td>
+                           2023款比亚迪海豚到店实拍：18项升级！实车体验效果超赞<br />
+                           在A0级轿车市场中，比亚迪海豚已成为连续13个月销量... <br />
+                           <a href="https://www.sohu.com/a/645747236_120790662">>>详情</a>
+                          </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           扔掉补贴“拐杖” 2月新能源汽车预计基本实现开门红<br />
+                           近日，乘联会和多家新能源车企发布了2月份销量数据... <br />
+                           <a href="http://www.ce.cn/cysc/newmain/yc/jsxw/202303/08/t20230308_38430604.shtml">>>详情</a>
+                          </td>
+                   </tr>
+                   <tr>
+                      <td>
+                           今年新能源汽车产业将保持良好发展态势<br />
+                           2022年，我国新能源汽车迎来了暴发性增长，全年产... <br />
+                           <a href="http://www.cinic.org.cn/hy/yw/1412863.html?from=singlemessage">>>详情</a>
+                          </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           特斯拉再度降价，新能源汽车市场竞争日趋激烈<br />
+                           近日，特斯拉宣布下调旗下两款电动汽车model s和... <br />
+                           <a href="https://baijiahao.baidu.com/s?id=1759702430110619240&wfr=spider&for=pc">>>详情</a>
+                          </td>
+                   </tr>
+
+                    </tbody>
+                </table>
                 </div>
             </div>
-            
-            
-            <div class="right-bottom">
-                <div class="title-box">
-                	<p id="switchBtn"><span class="active" data-dataType="income">人口出入时间段统计</span></p>
-                    
-                </div>
-                <div id="line_time" style="width:90%;height:160px;margin-left:10px;"></div>
-                
-            </div>
+
+<!--                <div class="right-bottom">-->
+<!--                <div class="title-box">-->
+<!--                	<p id="switchBtn"><span class="active" data-dataType="income">新能源汽车近年销量统计</span></p>-->
+<!--                    -->
+<!--                </div>-->
+<!--                <div id="line_time" style="width:90%;height:160px;margin-left:10px;"></div>-->
+
+<!--            </div>-->
         </div>
     </div>
     
@@ -164,7 +161,14 @@
 <script type="text/javascript" src="../static/js/infographic.js"></script>
 <script type="text/javascript" src="../static/js/macarons.js"></script>
 <script type="text/javascript" src="../static/js/shine.js"></script>
-<script type="text/javascript" src="../static/js/base.js"></script>
+<script type="text/javascript" src="../static/js/base.js">
+    // {#var sales_byd={{ sales_byd|safe }};#}
+    // {#var sales_nio={{ sales_nio|safe }};#}
+    // {#var sales_xp={{ sales_xp|safe }};#}
+    // {#var sales_t={{ sales_t|safe }};#}
+    // {#var sales_lx={{ sales_lx|safe }};#}
+    // {#var data_time={{ data_time|safe }};#}
+</script>
 
 <script type="text/javascript">
     $('document').ready(function () {
