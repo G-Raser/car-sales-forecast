@@ -11,7 +11,7 @@
  Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 08/03/2023 19:11:02
+ Date: 10/03/2023 10:06:41
 */
 
 SET NAMES utf8mb4;
@@ -131,7 +131,7 @@ INSERT INTO `t_carsales` VALUES (54, '2022/1/9', 14570, 'BYD');
 INSERT INTO `t_carsales` VALUES (55, '2022/1/16', 16530, 'BYD');
 INSERT INTO `t_carsales` VALUES (56, '2022/1/23', 20690, 'BYD');
 INSERT INTO `t_carsales` VALUES (57, '2022/1/30', 21870, 'BYD');
-INSERT INTO `t_carsales` VALUES (58, '2022/2/6', 680, 'BYD');
+INSERT INTO `t_carsales` VALUES (58, '2022/2/6', 20286, 'BYD');
 INSERT INTO `t_carsales` VALUES (59, '2022/2/13', 17620, 'BYD');
 INSERT INTO `t_carsales` VALUES (60, '2022/2/20', 22430, 'BYD');
 INSERT INTO `t_carsales` VALUES (61, '2022/2/27', 26490, 'BYD');
@@ -239,7 +239,7 @@ INSERT INTO `t_carsales` VALUES (162, '2022/1/9', 570, 'LX');
 INSERT INTO `t_carsales` VALUES (163, '2022/1/16', 1200, 'LX');
 INSERT INTO `t_carsales` VALUES (164, '2022/1/23', 1050, 'LX');
 INSERT INTO `t_carsales` VALUES (165, '2022/1/30', 1000, 'LX');
-INSERT INTO `t_carsales` VALUES (166, '2022/2/6', 4, 'LX');
+INSERT INTO `t_carsales` VALUES (166, '2022/2/6', 1000, 'LX');
 INSERT INTO `t_carsales` VALUES (167, '2022/2/13', 570, 'LX');
 INSERT INTO `t_carsales` VALUES (168, '2022/2/20', 1560, 'LX');
 INSERT INTO `t_carsales` VALUES (169, '2022/2/27', 1370, 'LX');
@@ -347,7 +347,7 @@ INSERT INTO `t_carsales` VALUES (378, '2022/1/9', 680, 'NIO');
 INSERT INTO `t_carsales` VALUES (379, '2022/1/16', 1130, 'NIO');
 INSERT INTO `t_carsales` VALUES (380, '2022/1/23', 1020, 'NIO');
 INSERT INTO `t_carsales` VALUES (381, '2022/1/30', 1370, 'NIO');
-INSERT INTO `t_carsales` VALUES (382, '2022/2/6', 20, 'NIO');
+INSERT INTO `t_carsales` VALUES (382, '2022/2/6', 983, 'NIO');
 INSERT INTO `t_carsales` VALUES (383, '2022/2/13', 440, 'NIO');
 INSERT INTO `t_carsales` VALUES (384, '2022/2/20', 1090, 'NIO');
 INSERT INTO `t_carsales` VALUES (385, '2022/2/27', 1190, 'NIO');
@@ -455,7 +455,7 @@ INSERT INTO `t_carsales` VALUES (270, '2022/1/9', 1440, 'T');
 INSERT INTO `t_carsales` VALUES (271, '2022/1/16', 2880, 'T');
 INSERT INTO `t_carsales` VALUES (272, '2022/1/23', 1580, 'T');
 INSERT INTO `t_carsales` VALUES (273, '2022/1/30', 1730, 'T');
-INSERT INTO `t_carsales` VALUES (274, '2022/2/6', 170, 'T');
+INSERT INTO `t_carsales` VALUES (274, '2022/2/6', 4269, 'T');
 INSERT INTO `t_carsales` VALUES (275, '2022/2/13', 1180, 'T');
 INSERT INTO `t_carsales` VALUES (276, '2022/2/20', 2680, 'T');
 INSERT INTO `t_carsales` VALUES (277, '2022/2/27', 6110, 'T');
@@ -563,7 +563,7 @@ INSERT INTO `t_carsales` VALUES (486, '2022/1/9', 690, 'XP');
 INSERT INTO `t_carsales` VALUES (487, '2022/1/16', 1480, 'XP');
 INSERT INTO `t_carsales` VALUES (488, '2022/1/23', 1970, 'XP');
 INSERT INTO `t_carsales` VALUES (489, '2022/1/30', 2640, 'XP');
-INSERT INTO `t_carsales` VALUES (490, '2022/2/6', 20, 'XP');
+INSERT INTO `t_carsales` VALUES (490, '2022/2/6', 1660, 'XP');
 INSERT INTO `t_carsales` VALUES (491, '2022/2/13', 460, 'XP');
 INSERT INTO `t_carsales` VALUES (492, '2022/2/20', 750, 'XP');
 INSERT INTO `t_carsales` VALUES (493, '2022/2/27', 1950, 'XP');
@@ -630,6 +630,10 @@ CREATE TABLE `t_carsinfo`  (
 -- ----------------------------
 -- Records of t_carsinfo
 -- ----------------------------
+INSERT INTO `t_carsinfo` VALUES (1, '2023款比亚迪海豚到店实拍：18项升级！实车体验效果超赞\r\n在A0级轿车市场中，比亚迪海豚', 'https://www.sohu.com/a/645747236_120790662', '在A0级轿车市场中，比亚迪海豚已成为连续13个月销量...');
+INSERT INTO `t_carsinfo` VALUES (2, '扔掉补贴“拐杖” 2月新能源汽车预计基本实现开门红', 'http://www.ce.cn/cysc/newmain/yc/jsxw/202303/08/t20230308_38430604.shtml', '近日，乘联会和多家新能源车企发布了2月份销量数据...');
+INSERT INTO `t_carsinfo` VALUES (3, '今年新能源汽车产业将保持良好发展态势', 'http://www.cinic.org.cn/hy/yw/1412863.html?from=singlemessage', '2022年，我国新能源汽车迎来了暴发性增长，全年产...');
+INSERT INTO `t_carsinfo` VALUES (4, '特斯拉再度降价，新能源汽车市场竞争日趋激烈', 'https://baijiahao.baidu.com/s?id=1759702430110619240&wfr=spider&for=pc', '特斯拉再度降价，新能源汽车市场竞争日趋激烈\r\n近日，特斯拉宣布下调旗下两款电动汽车model s和...');
 
 -- ----------------------------
 -- Table structure for t_results
@@ -711,17 +715,18 @@ INSERT INTO `t_stations` VALUES (42, '换电站保有', '湖北', '座', 66);
 -- ----------------------------
 DROP TABLE IF EXISTS `t_users`;
 CREATE TABLE `t_users`  (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `isManager` int(11) NOT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = MyISAM CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = MyISAM AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_users
 -- ----------------------------
-INSERT INTO `t_users` VALUES (1, 'AAA', '123', '123@qq.com', 0);
+INSERT INTO `t_users` VALUES (3, '张三', 'pbkdf2:sha256:260000$kzaR3jReZbW6Vgri$40ed71c7fe4c9beac758f714bdeea1c3f42ad6e6b80f02de8bc148296e424d73', '123@qq.com', 0);
+INSERT INTO `t_users` VALUES (1, 'G-raser', 'pbkdf2:sha256:260000$vH5pG028tNZCGPOj$eeb6b21c130cee0f42713f5b17e7933e0f3c6f15ad4e81270627e2093c7e1699', 'g.raser0001@gmail.com', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;

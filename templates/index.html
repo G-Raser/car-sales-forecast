@@ -11,6 +11,7 @@
     <script type="text/javascript" src="../static/js/rem.js"></script>
     <link rel="stylesheet" href="../static/css/style.css">
     <title>Drive to Future——驰向未来</title>
+    <title>基于ARIMA模型的多类型新能源汽车销量预测系统</title>
 </head>
 
 <body style="visibility: hidden;">
@@ -27,6 +28,9 @@
                     <h6>新能源汽车充电站分布</h6>
                 </div>
                 <div class="chart-box pie-chart" >
+                    <h6>新能源汽车充电桩地区分布</h6>
+                </div>
+                <div class="chart-box pie-chart" style="">
                     <div id="pie_fanzui" style="width:100%;height:90%">
 
                     </div>
@@ -38,6 +42,10 @@
                     
                 </div>
                 <div class="chart-box pie_chart" >
+                    <h6>新能源汽车购买记录</h6>
+                    
+                </div>
+                <div class="chart-box pie_chart" style="">
                     <div id="pie_bingtu" style="width:101%;height:90%">
 
                     </div>
@@ -48,6 +56,7 @@
         <div class="box-center">
             <div class="center-top">
                 <h1><img src="../static/images/tubiao.png" style="width:55px;margin-right:20px;"/>驰向未来：车辆销售预测</h1>
+                <h1><img src="../static/images/tubiao.png" style="width:55px;margin-right:20px;"/>新能源汽车销量预测平台</h1>
             </div>
             <div class="center-center">
                 <div class="weather-box">
@@ -65,21 +74,29 @@
                     </div>
                 </div>
                 <img src="../static/images/line_bg.png" alt="">
-                <div class="select-box" style="height: 0.3rem;">
+                <div class="select-box" style="height: 0.1rem;">
                     
                     <div data-type="2">
-                        <div class="select" tabindex="0" hidefocus="true" style="margin-top: -30px;">
-{#                           <p style="color:#FFFF00;font-weight:bold;height: 40px;">NO.1北京：2543289人</p>#}
-{#                           <p style="color:#7FFF00;font-weight:bold;height: 40px;">NO.2天津： 5690人</p>#}
-{#                           <p style="color:#7FFFD4;font-weight:bold;height: 40px;">NO.3河北： 456人</p>#}
+                        <div class="select" tabindex="0" hidefocus="true" >
+                            <p style="color:#99ccce;font-weight:normal;font-style:italic;font-size:15px;">欢迎使用本预测平台 </p>
+                            <a href="{{ url_for('updateUser') }}">{{ user.username }}</a>
+                            <br/>
+                        <ul class="login-buttons" style="height: 1.1rem;">
+                            <li><a href="{{ url_for('user.login') }}" class="hvr-sweep-to-left"><input type="submit" value="登录"/></a>
+                                <a href="{{ url_for('user.login') }}" class="hvr-sweep-to-left"><input type="submit" value="退出"/></a>
+                            </li>
+{#                               <li><input type="submit" value="退出"/></li>#}
+                                <div class="clear"></div>
+                        </ul>
                         </div>
+
                         
                     </div>
                 </div>
             </div>
             <div class="center-bottom">
                 <div class="chart-box">
-                    <div id="china_map" style="width:105%;height:90%;"></div>
+                    <div id="china_map" style="width:100%;height:80%;"></div>
                 </div>
                 
             </div>
@@ -88,8 +105,7 @@
         <div class="box-right">
             <div class="right-top">
                 <div class="title-box">
-                    <h6 id="barTitle">各品牌年销量总计</h6>
-                    
+                    <h6 id="barTitle">汽车购买人年龄分布</h6>
                 </div>
 <!--                <p class="unit">单位：岁</p>-->
                 <div class="chart-box">
@@ -104,6 +120,17 @@
                 </div>
                 <div class="chart-box">
                     <table class="table3" style="width:103%;height:50%;">
+                    <h6>汽车销量地区分布</h6>
+                        </table>
+                </div>
+                <div class="chart-box">
+                    <table class="table3" style="width:103%;height:50%;">
+                    <thead>
+                        <tr>
+                            <th>subtitles</th>
+                            <th>网址</th>
+                        </tr>
+                    </thead>
                     <tbody id="tList">
 <!--<tr><td colspan="4"><p style="width:9.6rem;">暂无数据</p></td></tr>-->
 
@@ -111,29 +138,48 @@
                        <td>
                            2023款比亚迪海豚到店实拍：18项升级！实车体验效果超赞<br />
                            在A0级轿车市场中，比亚迪海豚已成为连续13个月销量... <br />
-                           <a href="https://www.sohu.com/a/645747236_120790662">>>详情</a>
+                           <a style="float: right;" href="https://www.sohu.com/a/645747236_120790662">>>详情</a>
                           </td>
                    </tr>
                    <tr>
                        <td>
                            扔掉补贴“拐杖” 2月新能源汽车预计基本实现开门红<br />
                            近日，乘联会和多家新能源车企发布了2月份销量数据... <br />
-                           <a href="http://www.ce.cn/cysc/newmain/yc/jsxw/202303/08/t20230308_38430604.shtml">>>详情</a>
+                           <a style="float: right;" href="http://www.ce.cn/cysc/newmain/yc/jsxw/202303/08/t20230308_38430604.shtml">>>详情</a>
                           </td>
                    </tr>
                    <tr>
                       <td>
                            今年新能源汽车产业将保持良好发展态势<br />
                            2022年，我国新能源汽车迎来了暴发性增长，全年产... <br />
-                           <a href="http://www.cinic.org.cn/hy/yw/1412863.html?from=singlemessage">>>详情</a>
+                           <a style="float: right;" href="http://www.cinic.org.cn/hy/yw/1412863.html?from=singlemessage">>>详情</a>
                           </td>
                    </tr>
                    <tr>
                        <td>
                            特斯拉再度降价，新能源汽车市场竞争日趋激烈<br />
                            近日，特斯拉宣布下调旗下两款电动汽车model s和... <br />
-                           <a href="https://baijiahao.baidu.com/s?id=1759702430110619240&wfr=spider&for=pc">>>详情</a>
+                           <a style="float: right;" href="https://baijiahao.baidu.com/s?id=1759702430110619240&wfr=spider&for=pc">>>详情</a>
                           </td>
+                       <td>张女士</td>
+                       <td>28000000000000000000000000000
+                       00000000000000000000000000000000000
+                       000000000000000000000000000000000000</td>
+                   </tr>
+                   <tr>
+                       <td>李先生</td>
+                       <td>32000000000000000000000000
+                       000000000000000000000000000</td>
+                   </tr>
+                   <tr>
+                        <td>张无双</td>
+                       <td>500000000000000000000000000
+                       000000000000000000000000000000000</td>
+                   </tr>
+                   <tr>
+                       <td>李阳</td>
+                       <td>2000000000000000000000000000000
+                       0000000000000000000000000000000000000</td>
                    </tr>
 
                     </tbody>

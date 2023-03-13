@@ -48,6 +48,8 @@ class UserModel(db.Model):
     __tablename__ = 't_users'
     ID = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(255), nullable=False)
+    sex = db.Column(db.String(255), nullable=True, default=None)
+    brand = db.Column(db.String(255), nullable=True, default=None)
     password = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), nullable=False, unique=True)
     isManager = db.Column(db.Integer, nullable=False)
