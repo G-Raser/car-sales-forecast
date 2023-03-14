@@ -67,11 +67,26 @@ def data_echarts():
         ORDER BY time;
     """
 
+    sql3_1 = """
+           select time 
+    			,SUM(case when sale_brand_code = 'BYD' THEN sales END) AS BYD
+    			,SUM(case when sale_brand_code = 'LX' THEN sales END) AS LX
+    			,SUM(case when sale_brand_code = 'T' THEN sales END) AS T
+    			,SUM(case when sale_brand_code = 'NIO' THEN sales END) AS NIO
+    			,SUM(case when sale_brand_code = 'XP' THEN sales END) AS XP
+            from t_results
+            group by time 
+            ORDER BY time;
+        """
+
     try:
         #3、中间
         cur.execute(sql3)
         rs3 = cur.fetchall()
-        #print(rs)
+        cur.execute(sql3_1)
+        rs3_1=cur.fetchall()
+        # print(rs3)
+        # print(rs3_1)
         line_data = {}
         line_name,line_data1,line_data2,line_data3,line_data4,line_data5 =  [],[],[],[],[],[]
         for ai3 in rs3:
@@ -81,8 +96,15 @@ def data_echarts():
             line_data3.append(int(ai3['T']))
             line_data4.append(int(ai3['NIO']))
             line_data5.append(int(ai3['XP']))
+        for ai3_1 in rs3_1:
+            line_name.append(ai3_1['time'])
+            line_data1.append(int(ai3_1['BYD']))
+            line_data2.append(int(ai3_1['LX']))
+            line_data3.append(int(ai3_1['T']))
+            line_data4.append(int(ai3_1['NIO']))
+            line_data5.append(int(ai3_1['XP']))
         line_data = {'line_name':line_name,'line_data1':line_data1,'line_data2':line_data2,'line_data3':line_data3,'line_data4':line_data4,'line_data5':line_data5}
-        # print(line_data)
+        print(line_data)
     except:
         print('info3:中间数量获取失败--')
 

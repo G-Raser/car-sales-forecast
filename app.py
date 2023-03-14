@@ -4,7 +4,6 @@ from flask import render_template
 from exts import db
 import config
 from flask_migrate import Migrate
-from models import BrandModel
 from blueprints.user import bp
 
 import data_car
@@ -32,7 +31,7 @@ def hello_world():
     return render_template('index.html')
 
 
-# 左上角公司通知
+# 信息传递
 @app.route("/viewdata")
 def viewdata():
     alldata = data_car.data_echarts()

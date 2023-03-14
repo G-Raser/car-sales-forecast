@@ -1,5 +1,4 @@
 from exts import db
-from config.config import db_session
 
 class Brand(db.Model):
     __tablename__ = 't_brands'

@@ -27,7 +27,7 @@ option = {
   legend: {
     textStyle: {
         fontSize:  14,
-        color:  '#fff',
+        color:  '#6084ff',
         padding: [0,0,0,8]
     },
     data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
@@ -50,8 +50,8 @@ option = {
       axisLabel: {
                   show: true,    //这行代码控制着坐标轴x轴的文字是否显示
                   textStyle: {
-                  color: '#fff',   //x轴上的字体颜色
-                  fontSize:'16'    // x轴字体大小
+                  color: '#6084ff',   //x轴上的字体颜色
+                  fontSize:'15.7'    // x轴字体大小
                   }
       },
       data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -63,7 +63,7 @@ option = {
       axisLabel: {
                   show: true,    //这行代码控制着坐标轴x轴的文字是否显示
                   textStyle: {
-                  color: '#fff',   //y轴上的字体颜色
+                  color: '#6084ff',   //y轴上的字体颜色
                   fontSize:'16'    // y轴字体大小
                   }
       },
@@ -80,6 +80,35 @@ option = {
         focus: 'series'
       },
         data:  [120, 132, 101, 134, 90, 230, 210],
+        markLine: {
+              silent: true, //基线显示 隐藏
+               symbol:'none',// 不显示箭头和圆点
+              lineStyle: {
+                normal: {
+                  color: '#ff6c6c', // 这儿设置安全基线颜色
+                  width:3//设置线条粗细
+                },
+              },
+            data: [
+                {
+                    name: "已有数据",
+                    xAxis: '2023/1/22', // 安全基线 1
+                    label: {
+                        formatter: "已有数据",
+                        textStyle:{
+                            fontSize:19
+                        }
+                    },
+                },
+                // {
+                //     name: "标线1终点",
+                //     xAxis: 100, // 安全基线 2
+                //     label: {
+                //         formatter: "AAA",
+                //     },
+                // },
+            ],
+        }
     },
     {
       name: 'Union Ads',
