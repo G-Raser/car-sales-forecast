@@ -28,3 +28,9 @@ class LoginForm(wtforms.Form):
     email = wtforms.StringField(validators=[Email(message="邮箱格式错误！")])
     password = wtforms.StringField(validators=[Length(min=6, max=20, message="密码格式错误！")])
 
+class UpdateForm(wtforms.Form):
+    username = wtforms.StringField(validators=[Length(min=2, max=10, message='用户名格式错误！')])
+    sex = wtforms.StringField(validators=[Length(min=1, max=2, message='性别格式错误！')])
+    brand = wtforms.StringField(validators=[Length(min=2, max=10, message='关注品牌格式错误！')])
+    email = wtforms.StringField(validators=[Email(message="邮箱格式错误！")])
+
