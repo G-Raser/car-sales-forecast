@@ -1,49 +1,29 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-		<form method="post">
-			<table border="0" cellspacing="0" cellpadding="0">
-				<tr bgcolor="darkorange">
-					<td width="300">
-						&nbsp;&nbsp;&nbsp;&nbsp;
-						<font color="white">个人信息编辑</font>
-					</td>
-				</tr>
-				<!--创建姓名选框 设置该项为必填项 调用input中required方法-->
-				<tr>
-					<td height="40">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						用户名:<input type="text" name="username" required placeholder="请输入昵称">
-					</td>
-				</tr>
-				<tr>
-					<td height="40">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						性别:<input type="text" name="sex">
-					</td>
-				</tr>
-				<tr height="40">
-					<td height="40">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						关注品牌:<input type="text" name="brand">
-					</td>
-				</tr>
-				<tr height="40">
-					<td>
-						&nbsp;&nbsp;&nbsp;&nbsp;
-						电子邮件:<input type="email" name="email">
-					</td>
-				</tr>
-				<tr height="40" align="center">
-					<td>
-						<input type="submit" value="修改"/>
-					</td>
-				</tr>
-				</table>
-			</form>
-	</body>
+<head>
+    <title>用户信息修改界面</title>
+
+    <meta name="keywords" content="用户信息更新设计"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<h1>用户信息更改</h1>
+<div class="login-form">
+    <h2>信息修改</h2>
+    <div class="form-info">
+    <form method="POST">
+        <input type="text" class="email" name="username" placeholder="Username" required=""/>
+        <input type="text" class="email" name="sex" placeholder="Sex" required=""/>
+        <input type="text" class="email" name="brand" placeholder="Brand" required=""/>
+        <input type="text" class="email" name="email" placeholder="Email" required=""/>
+        <ul class="update-buttons">
+            <li><input type="submit" class="hvr-sweep-to-left" value="更新"/></li>
+            <div class="clear"></div>
+        </ul>
+    </form>
+    </div>
+</div>
+</body>
 </html>

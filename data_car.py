@@ -5,7 +5,7 @@
 import pymysql
 
 #mysql查询使用
-conn = pymysql.connect(host="localhost", user="root", passwd="Promise", port=3306,db="db_carsales", charset="UTF8MB4",autocommit=True)
+conn = pymysql.connect(host="localhost", user="root", passwd="root", port=3306,db="db_carsales", charset="UTF8MB4",autocommit=True)
 cur = conn.cursor(cursor = pymysql.cursors.DictCursor)
 
 def data_echarts():
