@@ -24,7 +24,7 @@ img{max-width:100%;}
 /*end reset*/
 body {
 font-family:Verdana;
-	background: url("../images/bg.jpg") no-repeat 0px 0px;
+	background: url("../images/loginbj.jpg") no-repeat 0px 0px;
 
 	text-align: center;
 	background-size:cover;
@@ -134,11 +134,7 @@ a.hvr-sweep-to-left {
 input[type="submit"] {
 	  background: #ff5757;
 	  color: #fff;
-<<<<<<< HEAD
   padding: 15px 60px;
-=======
-  padding: 13px 40px;
->>>>>>> 978ba57fac2f39cc1f630eca5eb0bead1ee5fdd6
 	  font-size: 1.1em;
 	  font-weight: 600;
 	  margin-right: 27px;

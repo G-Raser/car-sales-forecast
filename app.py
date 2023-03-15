@@ -42,7 +42,7 @@ def hello_world():
     return render_template('index.html')
 
 
-# 左上角公司通知
+# 信息传递
 @app.route("/viewdata")
 def viewdata():
     alldata = data_car.data_echarts()
