@@ -14,15 +14,14 @@
     <h2>信息修改</h2>
     <div class="form-info">
     <form method="POST">
-        <input type="text" class="email" name="username" placeholder="Username" required=""/>
-        <input type="text" class="email" name="sex" placeholder="Sex" required=""/>
-        <input type="text" class="email" name="brand" placeholder="Brand" required=""/>
-        <input type="text" class="email" name="email" placeholder="Email" required=""/>
+        <input type="text" class="email" name="username" value="{{user.username}}">
+        <input type="text" class="email" name="sex" value="{{user.sex}}">
+        <input type="text" class="email" name="brand" value="{{user.brand}}">
+        <input type="text" class="email" name="email" value="{{user.email}}">
         <ul class="update-buttons">
             <li><input type="submit" class="hvr-sweep-to-left" value="更新"/></li>
             <div class="clear"></div>
         </ul>
-    </form>
     </div>
 </div>
 </body>
