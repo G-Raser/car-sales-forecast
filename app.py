@@ -52,6 +52,7 @@ def viewdata():
 @app.route("/update", methods=['GET', 'POST'])
 def updateUser():
     if request.method == 'GET':
+        
         return render_template("update.html")
     else:
         form = UpdateForm(request.form)
